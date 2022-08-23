@@ -14,15 +14,10 @@ public class FallObjects : MonoBehaviour
         Debug.Log("Obje Düþtü");
         _canvasmanager = FindObjectOfType<CanvasManager>();
         _player = FindObjectOfType<Controller>();
-        if (other.gameObject.CompareTag("Gold"))
-        {
-            _canvasmanager.SetTotalMoneyCount(25);
-        }
-        if (other.gameObject.CompareTag("Stick"))
+        if (other.gameObject.CompareTag("Money"))
         {
             _canvasmanager.SetTotalMoneyCount(10);
-        }
-
+        }       
         FallingObjects++;
         if (FallingObjects % 5 == 0)
         {

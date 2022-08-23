@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Stick
   - Gold
+  - Stone
+  - Money
   layers:
   - Default
   - TransparentFX
