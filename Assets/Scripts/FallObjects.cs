@@ -11,14 +11,17 @@ public class FallObjects : MonoBehaviour
     public List<GameObject> FallenObjects;
     private void OnTriggerEnter(Collider other)
     {
+        FallingObjects++;
         Debug.Log("Obje Düþtü");
         _canvasmanager = FindObjectOfType<CanvasManager>();
         _player = FindObjectOfType<Controller>();
         if (other.gameObject.CompareTag("Money"))
         {
             _canvasmanager.SetTotalMoneyCount(10);
+            Destroy(other.gameObject);
+            FallingObjects--;
         }       
-        FallingObjects++;
+        
         if (FallingObjects % 5 == 0)
         {
             _player.transform.localScale += new Vector3(+0.35f, 0, +0.35f);

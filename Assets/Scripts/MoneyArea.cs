@@ -23,7 +23,7 @@ public class MoneyArea : MonoBehaviour
     }
     public IEnumerator GetFallObject()
     {
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(0.65f);
         gameObject.GetComponent<BoxCollider>().enabled = true;
 
     }
