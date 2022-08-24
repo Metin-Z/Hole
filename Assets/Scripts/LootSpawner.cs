@@ -17,8 +17,8 @@ public class LootSpawner : MonoBehaviour
             GameObject obj = Instantiate(ObjectTypes[0], RandomSpawnPos,Quaternion.identity);
             obj.transform.parent = transform;
         }
-        randomGemInt = Random.Range(0, 5);
-        if (randomGemInt == 2)
+        randomGemInt = Random.Range(1, 5);
+        if (randomGemInt == 3)
         {
             StartCoroutine(GetBonusGem());
         }

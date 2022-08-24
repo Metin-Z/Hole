@@ -18,9 +18,12 @@ public class CanvasManager : MonoBehaviour
         PlayerPrefs.SetInt("key", moneyCount);
         moneyText.text = moneyCount.ToString();       
     }
-
-    void Update()
+    public void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            moneyCount += 500;
+        }
+        moneyText.text = moneyCount.ToString();
     }
 }

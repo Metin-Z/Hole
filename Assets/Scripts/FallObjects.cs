@@ -12,7 +12,6 @@ public class FallObjects : MonoBehaviour
     public int FallenObjectValue;
     private void OnTriggerEnter(Collider other)
     {
-        FallingObjects++;
         Debug.Log("Obje Düþtü");
         _canvasmanager = FindObjectOfType<CanvasManager>();
         _player = FindObjectOfType<Controller>();
@@ -24,12 +23,7 @@ public class FallObjects : MonoBehaviour
         if (!other.gameObject.CompareTag("Money"))
         {
             FallenObjects.Add(other.gameObject);
-        }
-        if (FallingObjects % 5 == 0)
-        {
-            _player.transform.localScale += new Vector3(+0.35f, 0, +0.35f);
-            FallingObjects = 0;
-        }
+        }                         
     }
     public void Update()
     {

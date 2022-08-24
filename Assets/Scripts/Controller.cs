@@ -18,7 +18,7 @@ public class Controller : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             JoyStickMovement();
-        }
+        }     
         Clamp();
     }
     public void JoyStickMovement()
