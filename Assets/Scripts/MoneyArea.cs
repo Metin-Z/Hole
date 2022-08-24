@@ -6,12 +6,14 @@ public class MoneyArea : MonoBehaviour
 {
     FallObjects _fallObjects;
     public Transform moneyObjects;
+    bool GetObject;
     private void OnTriggerEnter(Collider other)
     {
+        GetObject = true;
         _fallObjects = FindObjectOfType<FallObjects>();
         if (other.gameObject.CompareTag("Player"))
-        {
-            StartCoroutine(GetObj());
+        {           
+                StartCoroutine(GetObj());                             
         }       
     }   
     public IEnumerator GetObj()
@@ -20,8 +22,8 @@ public class MoneyArea : MonoBehaviour
         {
             _fallObjects.FallenObjectValue--;
             _fallObjects.FallenObjects.FirstOrDefault().transform.position = moneyObjects.position;
-            _fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.FirstOrDefault());
-            yield return new WaitForSeconds(0.65f);
+            //_fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.FirstOrDefault());
+            yield return new WaitForSeconds(0.85f);            
         }
     }
 }

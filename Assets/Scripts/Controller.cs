@@ -5,9 +5,14 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public DynamicJoystick dynamicJoystick;
-    public float speed;
-    public float turnSpeed;
-
+    float speed;
+    float turnSpeed;
+    public PlayerSettings settings;
+    private void Start()
+    {
+        speed = settings.speed;
+        turnSpeed = settings.turnSpeed;
+    }
     private void FixedUpdate()
     {
         if (Input.GetMouseButton(0))

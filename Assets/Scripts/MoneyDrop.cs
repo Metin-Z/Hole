@@ -31,6 +31,16 @@ public class MoneyDrop : MonoBehaviour
                 PosValue++;
             }
         }
+        if (other.gameObject.CompareTag("BonusGem"))
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject obj = Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
+                obj.transform.parent = null;
+                obj.transform.localScale = new Vector3(1, 1, 1);
+                PosValue++;
+            }
+        }
         if (PosValue % 15 ==0)
         {
             PosValue = 0;

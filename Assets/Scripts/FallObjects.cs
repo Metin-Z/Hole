@@ -18,10 +18,9 @@ public class FallObjects : MonoBehaviour
         _player = FindObjectOfType<Controller>();
         if (other.gameObject.CompareTag("Money"))
         {
-            FallingObjects-=1;
             _canvasmanager.SetTotalMoneyCount(10);
-            Destroy(other.gameObject);
-        }               
+            Destroy(other.gameObject);           
+        }
         if (!other.gameObject.CompareTag("Money"))
         {
             FallenObjects.Add(other.gameObject);

@@ -6,7 +6,9 @@ using System.Linq;
 public class LootSpawner : MonoBehaviour
 {
     public List<GameObject> ObjectTypes;
+    public GameObject BonusGem;
     public int object1Count;
+    int randomGemInt;
     void Start()
     {
         for (int i = 0; i < object1Count; i++)
@@ -15,10 +17,20 @@ public class LootSpawner : MonoBehaviour
             GameObject obj = Instantiate(ObjectTypes[0], RandomSpawnPos,Quaternion.identity);
             obj.transform.parent = transform;
         }
+        randomGemInt = Random.Range(0, 5);
+        if (randomGemInt == 2)
+        {
+            StartCoroutine(GetBonusGem());
+        }
+    }
+    public IEnumerator GetBonusGem()
+    {
+        yield return new WaitForSeconds(1);
+        var BonusSpawnPos = new Vector3(Random.Range(-3, 3f), 2, Random.Range(-3f, 3f));
+        GameObject obj = Instantiate(BonusGem, BonusSpawnPos, Quaternion.identity);
+        obj.transform.parent = transform;
+
+
     }
 
-    void Update()
-    {
-        
-    }
 }
