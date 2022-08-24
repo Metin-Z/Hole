@@ -1,29 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class MoneyDrop : MonoBehaviour
 {
     public Transform MoneySpawnPos;
     public GameObject MoneyPrefab;
-
+    FallObjects _fallObjects;
+    MoneyPosList _moneyPos;
+    public int PosValue = 1;
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        _moneyPos = FindObjectOfType<MoneyPosList>();    
+        _fallObjects = FindObjectOfType<FallObjects>();
+        _fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.FirstOrDefault());
         if (other.gameObject.CompareTag("Stone"))
         {
-            GameObject obj =Instantiate(MoneyPrefab, MoneySpawnPos);
+            GameObject obj =Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
             obj.transform.parent = null;
             obj.transform.localScale = new Vector3(1, 1, 1);
+            PosValue++;
         }
         if (other.gameObject.CompareTag("Gold"))
         {
-            GameObject obj = Instantiate(MoneyPrefab, MoneySpawnPos);
-            GameObject obj2 = Instantiate(MoneyPrefab, MoneySpawnPos);
-            obj.transform.parent = null;
-            obj.transform.localScale = new Vector3(1, 1, 1);
-            obj2.transform.parent = null;
-            obj2.transform.localScale = new Vector3(1, 1, 1);
+            for (int i = 0; i < 2; i++)
+            {
+                GameObject obj = Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
+                obj.transform.parent = null;
+                obj.transform.localScale = new Vector3(1, 1, 1);
+                PosValue++;
+            }
         }
+        if (PosValue % 15 ==0)
+        {
+            PosValue = 0;
+        }
+        Destroy(other.gameObject);
     }
 }

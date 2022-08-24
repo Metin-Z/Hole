@@ -9,6 +9,7 @@ public class FallObjects : MonoBehaviour
     Controller _player;
     public int FallingObjects;
     public List<GameObject> FallenObjects;
+    public int FallenObjectValue;
     private void OnTriggerEnter(Collider other)
     {
         FallingObjects++;
@@ -17,16 +18,22 @@ public class FallObjects : MonoBehaviour
         _player = FindObjectOfType<Controller>();
         if (other.gameObject.CompareTag("Money"))
         {
+            FallingObjects-=1;
             _canvasmanager.SetTotalMoneyCount(10);
             Destroy(other.gameObject);
-            FallingObjects--;
-        }       
-        
+        }               
+        if (!other.gameObject.CompareTag("Money"))
+        {
+            FallenObjects.Add(other.gameObject);
+        }
         if (FallingObjects % 5 == 0)
         {
             _player.transform.localScale += new Vector3(+0.35f, 0, +0.35f);
             FallingObjects = 0;
         }
-        FallenObjects.Add(other.gameObject);
+    }
+    public void Update()
+    {
+        FallenObjectValue = FallenObjects.Count;
     }
 }
