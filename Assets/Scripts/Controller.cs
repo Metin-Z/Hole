@@ -5,7 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public DynamicJoystick dynamicJoystick;
-    float speed;
+    public float speed;
     float turnSpeed;
     public PlayerSettings settings;
     Vector3 StartScale;
