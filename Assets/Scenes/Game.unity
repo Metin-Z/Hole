@@ -3891,8 +3891,8 @@ MonoBehaviour:
   ScaleBuyMax: {fileID: 718145102}
   SpeedBuy: {fileID: 1794046308}
   SpeedBuyMax: {fileID: 510651747}
-  SkinBuy: {fileID: 0}
-  SkinBuyMax: {fileID: 0}
+  SkinBuy: {fileID: 1186433525}
+  SkinBuyMax: {fileID: 1910199109}
   noMoneyText: {fileID: 1217627187}
   settings: {fileID: 11400000, guid: 7f14cb59697b73b499d3260119b8e60f, type: 2}
 --- !u!114 &1122025005
