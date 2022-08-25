@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4399850180281677356}
   - component: {fileID: 4399850180282807532}
   - component: {fileID: 1733411541759450261}
-  - component: {fileID: 5942571062474761432}
+  - component: {fileID: 8933313221267026109}
   m_Layer: 0
   m_Name: Money
   m_TagString: Money
@@ -101,8 +101,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 10
   m_CollisionDetection: 0
---- !u!64 &5942571062474761432
-MeshCollider:
+--- !u!65 &8933313221267026109
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,7 +111,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 58f529106bd309144855a28ce9b12b37, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.22609161, z: 0.1}
+  m_Center: {x: 0, y: 0.113045804, z: 0}

@@ -22,7 +22,6 @@ public class MoneyArea : MonoBehaviour
         {
             _fallObjects.FallenObjectValue--;
             _fallObjects.FallenObjects.FirstOrDefault().transform.position = moneyObjects.position;
-            //_fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.FirstOrDefault());
             yield return new WaitForSeconds(0.85f);            
         }
     }

@@ -7,16 +7,29 @@ public class CanvasManager : MonoBehaviour
 {
     public int moneyCount;
     public TextMeshProUGUI moneyText;
+    public float playerSizeX,playerSizeZ;
+    Controller _player;
     public void Awake()
     {
-        moneyCount = PlayerPrefs.GetInt("key");
+        _player = FindObjectOfType<Controller>();
+        moneyCount = PlayerPrefs.GetInt("Money");
         moneyText.text = moneyCount.ToString();
+       _player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("ScaleX"), 1, PlayerPrefs.GetFloat("ScaleZ"));
     }
     public void SetTotalMoneyCount(int moneyValue)
     {
         moneyCount+=moneyValue;
-        PlayerPrefs.SetInt("key", moneyCount);
+        PlayerPrefs.SetInt("Money", moneyCount);
         moneyText.text = moneyCount.ToString();       
+    }
+    public void SetScaleSize(float xSize, float zSize)
+    {
+        playerSizeX = xSize;
+        playerSizeZ = zSize;
+        PlayerPrefs.SetFloat("ScaleX", playerSizeX);
+        PlayerPrefs.SetFloat("ScaleZ", playerSizeZ);
+        
+
     }
     public void Update()
     {
