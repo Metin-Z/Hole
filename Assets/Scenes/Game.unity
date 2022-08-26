@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 138783389}
   - component: {fileID: 138783388}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SpeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +326,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138783386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -359,9 +359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '350$
-
-    Speed++'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -1839,8 +1837,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyCount: 0
   moneyText: {fileID: 1094887740}
-  playerSizeX: 0
-  playerSizeZ: 0
+  ScaleText: {fileID: 1385608191}
+  SpeedText: {fileID: 138783388}
 --- !u!1 &497583787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,8 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dynamicJoystick: {fileID: 797969641}
-  speed: 0
-  settings: {fileID: 11400000, guid: 7f14cb59697b73b499d3260119b8e60f, type: 2}
+  speed: 2.5
+  turnSpeed: 0
 --- !u!54 &563608468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3302,7 +3300,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.8, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3612,7 +3610,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122025004}
+      - m_Target: {fileID: 2132119109}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: UpScale
         m_Mode: 1
@@ -3840,7 +3838,6 @@ GameObject:
   - component: {fileID: 1122025003}
   - component: {fileID: 1122025006}
   - component: {fileID: 1122025005}
-  - component: {fileID: 1122025004}
   m_Layer: 5
   m_Name: UpgradeTab
   m_TagString: Untagged
@@ -3875,26 +3872,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 303}
   m_SizeDelta: {x: 1000, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1122025004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122025002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72103dc5d2372c04fa9335af0fcea9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScaleBuy: {fileID: 1014124666}
-  ScaleBuyMax: {fileID: 718145102}
-  SpeedBuy: {fileID: 1794046308}
-  SpeedBuyMax: {fileID: 510651747}
-  SkinBuy: {fileID: 1186433525}
-  SkinBuyMax: {fileID: 1910199109}
-  noMoneyText: {fileID: 1217627187}
-  settings: {fileID: 11400000, guid: 7f14cb59697b73b499d3260119b8e60f, type: 2}
 --- !u!114 &1122025005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4017,7 +3994,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122025004}
+      - m_Target: {fileID: 2132119109}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: ChangeSkin
         m_Mode: 1
@@ -4093,7 +4070,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204858074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.14}
+  m_LocalPosition: {x: 0, y: 0, z: -0.081}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4102,7 +4079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204858076
@@ -4757,7 +4734,7 @@ GameObject:
   - component: {fileID: 1385608192}
   - component: {fileID: 1385608191}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SizeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4803,9 +4780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '250$
-
-    Scale++'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -5614,7 +5589,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122025004}
+      - m_Target: {fileID: 2132119109}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: UpSpeed
         m_Mode: 1
@@ -6104,7 +6079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '500$
+  m_text: '150$
 
     ChangeSkin'
   m_isRightToLeft: 0
@@ -6399,6 +6374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132119108}
+  - component: {fileID: 2132119109}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -6429,6 +6405,42 @@ RectTransform:
   m_AnchoredPosition: {x: -278, y: -155}
   m_SizeDelta: {x: 371.21655, y: 165.57532}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2132119109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132119107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72103dc5d2372c04fa9335af0fcea9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleUpId: 0
+  ScaleUpValue: 0
+  scaleUpMoney: 250
+  speedUpId: 0
+  SpeedUpValue: 0
+  speedUpMoney: 350
+  skinChangeId: 0
+  SkinChangeValue: 0
+  skinChangeMoney: 500
+  ScaleBuy: {fileID: 1014124666}
+  ScaleBuyMax: {fileID: 718145102}
+  SpeedBuy: {fileID: 1794046308}
+  SpeedBuyMax: {fileID: 510651747}
+  SkinBuy: {fileID: 1186433525}
+  SkinBuyMax: {fileID: 1910199109}
+  noMoneyText: {fileID: 1217627187}
+  settings: {fileID: 11400000, guid: 7f14cb59697b73b499d3260119b8e60f, type: 2}
+  ChangeColor:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0.31503522, g: 1, b: 0, a: 0}
+  - {r: 1, g: 0, b: 0.72572756, a: 0}
+  - {r: 0.98909426, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.9270077, b: 1, a: 0}
 --- !u!1 &2137400979
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,16 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public DynamicJoystick dynamicJoystick;
-    public float speed;
-    float turnSpeed;
-    public PlayerSettings settings;
+    public float speed, turnSpeed;
+    //public PlayerSettings settings;
     Vector3 StartScale;
+    UpgradeSystem _upgrade;
+    private void Awake()
+    {
+        _upgrade = FindObjectOfType<UpgradeSystem>();
+        speed = PlayerPrefs.GetFloat("SpeedSet");
+        transform.GetChild(1).GetComponent<MeshRenderer>().material.DOColor(_upgrade.ChangeColor[PlayerPrefs.GetInt("SkinChangeControl")],3f);
+    }
     private void Start()
     {
         StartScale = transform.localScale;
@@ -16,8 +23,12 @@ public class Controller : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-        speed = settings.speed;
-        turnSpeed = settings.turnSpeed;
+        if (speed == 0)
+        {
+            speed = 2.5f;
+        }
+        //speed = settings.speed;
+        //turnSpeed = settings.turnSpeed;
     }
     private void FixedUpdate()
     {
