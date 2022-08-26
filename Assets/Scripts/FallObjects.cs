@@ -10,6 +10,10 @@ public class FallObjects : MonoBehaviour
     public int FallingObjects;
     public List<GameObject> FallenObjects;
     public int FallenObjectValue;
+    private void Awake()
+    {
+        _player = FindObjectOfType<Controller>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Obje Düþtü");
@@ -17,7 +21,7 @@ public class FallObjects : MonoBehaviour
         _player = FindObjectOfType<Controller>();
         if (other.gameObject.CompareTag("Money"))
         {
-            _canvasmanager.SetTotalMoneyCount(10);
+            _canvasmanager.SetTotalMoneyCount(20);
             Destroy(other.gameObject);           
         }
         if (!other.gameObject.CompareTag("Money"))
@@ -28,5 +32,11 @@ public class FallObjects : MonoBehaviour
     public void Update()
     {
         FallenObjectValue = FallenObjects.Count;
+        if (FallenObjectValue >= 20)
+        {
+            _player.transform.GetChild(1).GetComponent<BoxCollider>().isTrigger = false;
+            _player.transform.GetChild(2).gameObject.SetActive(true);
+            
+        }
     }
 }
