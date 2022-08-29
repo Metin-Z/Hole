@@ -13,9 +13,11 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public List<GameObject> levelObjectList;
     public GameObject levelController;
     GameObject ParentObj;
+    SliderUI _slider;
     public void Start()
     {
         InitializeLevel();
+        _slider = FindObjectOfType<SliderUI>();
     }
     public void InitializeLevel()
     {
@@ -41,6 +43,7 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
+        _slider.slideValue = 0;
         nextLevelUI.SetActive(false);
         Level currentLevel = GetCurrentLevel();
         PlayerPrefs.SetInt(CommonTypes.LEVEL_DATA_KEY, currentLevel.Id + 1);

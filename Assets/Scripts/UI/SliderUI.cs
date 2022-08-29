@@ -6,14 +6,25 @@ public class SliderUI : MonoBehaviour
 {
     LevelController _levelControl;
     public Slider slider;
-    public GameObject levelcontroller;
+    GameObject Slid;
+    public int slideMaxValue;
+    public int slideValue;
+
     void Start()
     {
         _levelControl = FindObjectOfType<LevelController>();
+        StartCoroutine(SliderMaxValue());
     }
     void Update()
     {
-        slider.maxValue = _levelControl.levelChildCount;
-        slider.value = 4;
+        
+        slider.value = slideValue;
+        slider.maxValue = slideMaxValue;
+    }
+    public IEnumerator SliderMaxValue()
+    {
+        yield return new WaitForSeconds(2);
+        Slid = GameObject.FindGameObjectWithTag("Level");
+        slideMaxValue = Slid.transform.childCount;
     }
 }

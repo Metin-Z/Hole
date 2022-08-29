@@ -24,10 +24,16 @@ public class FallObjects : MonoBehaviour
             _canvasmanager.SetTotalMoneyCount(20);
             Destroy(other.gameObject);           
         }
-        if (!other.gameObject.CompareTag("Money"))
+        if (other.gameObject.CompareTag("Moneybag"))
+        {
+            _canvasmanager.SetTotalMoneyCount(50);
+            Destroy(other.gameObject);
+        }
+        if (!other.gameObject.CompareTag("Money") || !other.gameObject.CompareTag("Moneybag"))
         {
             FallenObjects.Add(other.gameObject);
-        }                         
+        }  
+        
     }
     public void Update()
     {

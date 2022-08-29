@@ -4,13 +4,20 @@ using UnityEngine;
 using System.Linq;
 public class MoneyDrop : MonoBehaviour
 {
-    public Transform MoneySpawnPos;
     public GameObject MoneyPrefab;
+    public GameObject MoneyBagPrefab;
     FallObjects _fallObjects;
     MoneyPosList _moneyPos;
     public int PosValue = 0;
+
+    SliderUI _slider;
+    private void Start()
+    {
+        _slider = FindObjectOfType<SliderUI>();   
+    }
     private void OnTriggerEnter(Collider other)
     {
+        _slider.slideValue++;
         Destroy(other.gameObject);
         _moneyPos = FindObjectOfType<MoneyPosList>();    
         _fallObjects = FindObjectOfType<FallObjects>();
@@ -67,7 +74,20 @@ public class MoneyDrop : MonoBehaviour
                     PosValue = 0;
                 }
             }
-        }     
-        
+        }
+        if (other.gameObject.CompareTag("Diamond"))
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject obj = Instantiate(MoneyBagPrefab, _moneyPos.MoneyPoses[PosValue]);
+                obj.transform.parent = null;
+                obj.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+                PosValue++;
+                if (PosValue % 15 == 0)
+                {
+                    PosValue = 0;
+                }
+            }
+        }
     }
 }
