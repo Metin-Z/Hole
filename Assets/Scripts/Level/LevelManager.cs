@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
         Level currentLevel = GetCurrentLevel();
         PlayerPrefs.SetInt(CommonTypes.LEVEL_DATA_KEY, currentLevel.Id + 1);
         InitializeLevel();
-        RenderSettings.skybox = Skybox[Random.Range(0, 3)];
+        //RenderSettings.skybox = Skybox[Random.Range(0, 3)];
         PlayerPrefs.SetInt(CommonTypes.LEVEL_FAKE_DATA_KEY, PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY) + 1);
     }
     public Level GetCurrentLevel()
