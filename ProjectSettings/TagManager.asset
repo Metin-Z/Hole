@@ -9,6 +9,9 @@ TagManager:
   - Money
   - BonusGem
   - Emerald
+  - Level
+  - Diamond
+  - Moneybag
   layers:
   - Default
   - TransparentFX
