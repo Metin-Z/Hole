@@ -9,6 +9,8 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI ScaleText;
     public TextMeshProUGUI SpeedText;
+    public TextMeshProUGUI LevelText;
+    public TextMeshProUGUI NextLevelText;
     float playerSizeX,playerSizeZ;
     Controller _player;
     UpgradeSystem _upgradeSystem;
@@ -49,5 +51,9 @@ public class CanvasManager : MonoBehaviour
         moneyText.text = moneyCount.ToString();
         ScaleText.text = _upgradeSystem.scaleUpMoney.ToString() + "$" + " "+"Scale++";
         SpeedText.text = _upgradeSystem.speedUpMoney.ToString() + "$" + " "+"Speed++";
+
+        LevelText.text = (PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY) + 1).ToString();
+        NextLevelText.text = (PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY) + 2).ToString();
+
     }
 }
