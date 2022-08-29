@@ -32,8 +32,8 @@ public class FallObjects : MonoBehaviour
         if (!other.gameObject.CompareTag("Money") || !other.gameObject.CompareTag("Moneybag"))
         {
             FallenObjects.Add(other.gameObject);
-        }  
-        
+        }
+
     }
     public void Update()
     {
