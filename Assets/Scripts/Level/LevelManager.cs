@@ -15,6 +15,13 @@ public class LevelManager : MonoBehaviour
     GameObject ParentObj;
     SliderUI _slider;
     UpgradeSystem _upgrade;
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            NextLevel();
+        }
+    }
     public void Start()
     {
         InitializeLevel();
