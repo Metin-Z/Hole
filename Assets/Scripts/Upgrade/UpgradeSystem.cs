@@ -16,6 +16,8 @@ public class UpgradeSystem : MonoBehaviour
     public PlayerSettings settings;
     Vector3 PlayerSCALE;
     public List<Color> ChangeColor;
+
+    public bool nextLevel = false;
     void Start()
     {
         _canvasmanager = FindObjectOfType<CanvasManager>();
@@ -98,7 +100,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             SkinBuy.SetActive(false);
             SkinBuyMax.SetActive(true);
-        }
+        }         
+
         if (_canvasmanager.moneyCount >= scaleUpMoney)
         {
             noMoneyText.SetActive(false);
@@ -112,5 +115,16 @@ public class UpgradeSystem : MonoBehaviour
             noMoneyText.SetActive(false);
         }
         #endregion
+
+        if (nextLevel == true)
+        {
+            ScaleBuy.SetActive(true);
+            ScaleBuyMax.SetActive(false);
+            SpeedBuy.SetActive(true);
+            SpeedBuyMax.SetActive(false);
+            SkinBuy.SetActive(true);
+            SkinBuyMax.SetActive(false);
+            nextLevel = false;
+        }
     }
 }

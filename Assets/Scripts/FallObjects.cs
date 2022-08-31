@@ -29,7 +29,7 @@ public class FallObjects : MonoBehaviour
             _canvasmanager.SetTotalMoneyCount(50);
             Destroy(other.gameObject);
         }
-        if (!other.gameObject.CompareTag("Money") || !other.gameObject.CompareTag("Moneybag"))
+        if (other.gameObject.CompareTag("Stone") || other.gameObject.CompareTag("Gold") || other.gameObject.CompareTag("BonusGem") || other.gameObject.CompareTag("Emerald") || other.gameObject.CompareTag("Diamond"))
         {
             FallenObjects.Add(other.gameObject);
         }

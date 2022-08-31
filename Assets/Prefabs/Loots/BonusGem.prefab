@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8297175833096821197}
   - component: {fileID: 8297175833093954029}
   - component: {fileID: 8297175833094921005}
-  - component: {fileID: 4723427067089874613}
   - component: {fileID: 3634727467978705253}
+  - component: {fileID: 8314359608224985065}
   m_Layer: 0
   m_Name: BonusGem
   m_TagString: BonusGem
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8297175833097176557}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4723427067089874613
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8297175833097176557}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.05795609, y: 0.12545002, z: 0.04035604}
-  m_Center: {x: -0.0016296823, y: 0.058814824, z: -0.014337659}
 --- !u!54 &3634727467978705253
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,3 +101,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8314359608224985065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8297175833097176557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: aed95e3bea2e442418ea657a58148884, type: 3}

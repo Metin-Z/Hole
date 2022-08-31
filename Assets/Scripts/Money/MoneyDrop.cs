@@ -49,11 +49,11 @@ public class MoneyDrop : MonoBehaviour
         }
         if (other.gameObject.CompareTag("BonusGem"))
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
-                GameObject obj = Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
+                GameObject obj = Instantiate(MoneyBagPrefab, _moneyPos.MoneyPoses[PosValue]);
                 obj.transform.parent = null;
-                obj.transform.localScale = new Vector3(1, 1, 1);
+                obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 PosValue++;
                 if (PosValue % 15 == 0)
                 {

@@ -14,10 +14,12 @@ public class LevelManager : MonoBehaviour
     public GameObject levelController;
     GameObject ParentObj;
     SliderUI _slider;
+    UpgradeSystem _upgrade;
     public void Start()
     {
         InitializeLevel();
         _slider = FindObjectOfType<SliderUI>();
+        _upgrade = FindObjectOfType<UpgradeSystem>();
     }
     public void InitializeLevel()
     {
@@ -43,7 +45,16 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
+        PlayerPrefs.SetInt("ScaleUpControl", 0);
+        PlayerPrefs.SetInt("SpeedUpControl", 0);
+        PlayerPrefs.SetInt("SkinChangeControl", 0);
+        _upgrade.nextLevel = true;
+        _upgrade.scaleUpId = 1;
+        _upgrade.speedUpId = 1;
+        _upgrade.skinChangeId = 1;
         _slider.slideValue = 0;
+        _slider.StartCoroutine("SliderMaxValue");
+        
         nextLevelUI.SetActive(false);
         Level currentLevel = GetCurrentLevel();
         PlayerPrefs.SetInt(CommonTypes.LEVEL_DATA_KEY, currentLevel.Id + 1);
