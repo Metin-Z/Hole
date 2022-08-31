@@ -11,7 +11,6 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI SpeedText;
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI NextLevelText;
-    float playerSizeX,playerSizeZ;
     Controller _player;
     UpgradeSystem _upgradeSystem;
     public void Awake()
@@ -20,7 +19,7 @@ public class CanvasManager : MonoBehaviour
         _upgradeSystem = FindObjectOfType<UpgradeSystem>();
         moneyCount = PlayerPrefs.GetInt("Money");
         moneyText.text = moneyCount.ToString();
-       _player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("ScaleX"), 1, PlayerPrefs.GetFloat("ScaleZ"));
+       _player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("ScaleX"), PlayerPrefs.GetFloat("ScaleY"), PlayerPrefs.GetFloat("ScaleZ"));
         PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY);
     }
     public void SetTotalMoneyCount(int moneyValue)
@@ -29,9 +28,10 @@ public class CanvasManager : MonoBehaviour
         PlayerPrefs.SetInt("Money", moneyCount);
         moneyText.text = moneyCount.ToString();       
     }
-    public void SetScaleSize(float xSize, float zSize)
+    public void SetScaleSize(float xSize,float ySize, float zSize)
     {
         PlayerPrefs.SetFloat("ScaleX", xSize);
+        PlayerPrefs.SetFloat("ScaleY", ySize);
         PlayerPrefs.SetFloat("ScaleZ", zSize);        
     }
     public void SetSpeed(float Setspeed)

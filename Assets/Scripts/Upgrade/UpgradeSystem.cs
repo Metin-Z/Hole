@@ -13,16 +13,11 @@ public class UpgradeSystem : MonoBehaviour
     public int skinChangeId, SkinChangeValue,skinChangeMoney=500;
     public GameObject ScaleBuy, ScaleBuyMax,SpeedBuy,SpeedBuyMax,SkinBuy,SkinBuyMax;
     public GameObject noMoneyText;
-    float playerX=1, playerZ=1;
+    float playerX = 1,playerY = 1,playerZ = 1;
     public PlayerSettings settings;
     Vector3 PlayerSCALE;
     public List<Color> ChangeColor;
-
     public bool nextLevel = false;
-    private void Awake()
-    {
-       // scaleMultiply = 1.2f;
-    }
     void Start()
     {
         _canvasmanager = FindObjectOfType<CanvasManager>();
@@ -36,7 +31,7 @@ public class UpgradeSystem : MonoBehaviour
             ScaleUpValue = scaleUpId;
             PlayerPrefs.SetInt("ScaleUpControl", ScaleUpValue);
             _canvasmanager.SetTotalMoneyCount(-scaleUpMoney);
-            Vector3 scale = new Vector3(_player.transform.localScale.x * scaleMultiply, _player.transform.localScale.y, _player.transform.localScale.z* scaleMultiply);
+            Vector3 scale = new Vector3(_player.transform.localScale.x * scaleMultiply, _player.transform.localScale.y * scaleMultiply, _player.transform.localScale.z* scaleMultiply);
             _player.transform.DOScale(scale, .35f).SetEase(Ease.Linear);
             StartCoroutine(GetPrefScale());
         }
@@ -50,8 +45,9 @@ public class UpgradeSystem : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         PlayerSCALE = _player.transform.localScale;
         playerX = PlayerSCALE.x;
+        playerY = PlayerSCALE.y;
         playerZ = PlayerSCALE.z;
-        _canvasmanager.SetScaleSize(playerX, playerZ);
+        _canvasmanager.SetScaleSize(playerX,playerY,playerZ);
     }
     public void UpSpeed()
     {

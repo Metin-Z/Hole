@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 676751521575302735}
   - component: {fileID: 1422210671900535201}
   - component: {fileID: 6178531855761434571}
+  - component: {fileID: -1741834407022588704}
   m_Layer: 0
   m_Name: MoneyBag
   m_TagString: Moneybag
@@ -112,5 +113,17 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
+--- !u!114 &-1741834407022588704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676751521573103759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991666906554e5a42ae4c9d6119d1d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
