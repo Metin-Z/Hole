@@ -52,13 +52,13 @@ public class LevelManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        PlayerPrefs.SetInt("ScaleUpControl", 0);
-        PlayerPrefs.SetInt("SpeedUpControl", 0);
-        PlayerPrefs.SetInt("SkinChangeControl", 0);
+        PlayerPrefs.SetInt("ScaleUpControl", 1);
+        PlayerPrefs.SetInt("SpeedUpControl", 1);
+        PlayerPrefs.SetInt("SkinChangeControl", 1);
         _upgrade.nextLevel = true;
-        _upgrade.scaleUpId = 1;
-        _upgrade.speedUpId = 1;
-        _upgrade.skinChangeId = 1;
+        _upgrade.scaleUpId = 0;
+        _upgrade.speedUpId = 0;
+        _upgrade.skinChangeId = 0;
         _slider.slideValue = 0;
         _slider.StartCoroutine("SliderMaxValue");
         

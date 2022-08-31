@@ -7,6 +7,7 @@ public class UpgradeSystem : MonoBehaviour
 {
     CanvasManager _canvasmanager;
     Controller _player;
+    public float scaleMultiply;
     public int scaleUpId, ScaleUpValue,scaleUpMoney =250;
     public int speedUpId, SpeedUpValue,speedUpMoney =350;
     public int skinChangeId, SkinChangeValue,skinChangeMoney=500;
@@ -18,6 +19,10 @@ public class UpgradeSystem : MonoBehaviour
     public List<Color> ChangeColor;
 
     public bool nextLevel = false;
+    private void Awake()
+    {
+       // scaleMultiply = 1.2f;
+    }
     void Start()
     {
         _canvasmanager = FindObjectOfType<CanvasManager>();
@@ -31,7 +36,7 @@ public class UpgradeSystem : MonoBehaviour
             ScaleUpValue = scaleUpId;
             PlayerPrefs.SetInt("ScaleUpControl", ScaleUpValue);
             _canvasmanager.SetTotalMoneyCount(-scaleUpMoney);
-            Vector3 scale = new Vector3(_player.transform.localScale.x * 1.2f, _player.transform.localScale.y, _player.transform.localScale.z * 1.2f);
+            Vector3 scale = new Vector3(_player.transform.localScale.x * scaleMultiply, _player.transform.localScale.y, _player.transform.localScale.z* scaleMultiply);
             _player.transform.DOScale(scale, .35f).SetEase(Ease.Linear);
             StartCoroutine(GetPrefScale());
         }
@@ -81,6 +86,14 @@ public class UpgradeSystem : MonoBehaviour
     }
     public void Update()
     {
+        if (PlayerPrefs.GetInt(CommonTypes.LEVEL_DATA_KEY) == 0)
+        {
+            scaleMultiply = 1.2f;
+        }
+        if (PlayerPrefs.GetInt(CommonTypes.LEVEL_DATA_KEY) == 1)
+        {
+            scaleMultiply = 1.15f;
+        }
         #region Id-Money;
         if (PlayerPrefs.GetInt("ScaleUpControl") == 1) { scaleUpMoney = 500; }if (PlayerPrefs.GetInt("ScaleUpControl") == 2) { scaleUpMoney = 750; }if (PlayerPrefs.GetInt("ScaleUpControl") == 3) { scaleUpMoney = 1000; }if (PlayerPrefs.GetInt("ScaleUpControl") == 4) { scaleUpMoney = 1250; }
         if (PlayerPrefs.GetInt("SpeedUpControl") == 1) { speedUpMoney = 700; }if (PlayerPrefs.GetInt("SpeedUpControl") == 2) { speedUpMoney = 1050; }if (PlayerPrefs.GetInt("SpeedUpControl") == 3) { speedUpMoney = 1400; }if (PlayerPrefs.GetInt("SpeedUpControl") == 4) { speedUpMoney = 1750; }
@@ -116,7 +129,7 @@ public class UpgradeSystem : MonoBehaviour
         }
         #endregion
 
-        if (nextLevel == true)
+        if (nextLevel == true && PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY) <2)
         {
             ScaleBuy.SetActive(true);
             ScaleBuyMax.SetActive(false);

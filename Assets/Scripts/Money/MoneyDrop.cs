@@ -21,7 +21,7 @@ public class MoneyDrop : MonoBehaviour
         Destroy(other.gameObject);
         _moneyPos = FindObjectOfType<MoneyPosList>();    
         _fallObjects = FindObjectOfType<FallObjects>();
-        _fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.FirstOrDefault());
+        _fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.LastOrDefault());
         if (other.gameObject.CompareTag("Stone"))
         {
             GameObject obj =Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);

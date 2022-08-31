@@ -28,7 +28,7 @@ public class MoneyArea : MonoBehaviour
         while (_fallObjects.FallenObjectValue > 0)
         {
             _fallObjects.FallenObjectValue--;
-            _fallObjects.FallenObjects.FirstOrDefault().transform.position = moneyObjects.position;
+            _fallObjects.FallenObjects.LastOrDefault().transform.position = moneyObjects.position;
             yield return new WaitForSeconds(0.85f);
         }
     }
