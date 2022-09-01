@@ -29,7 +29,7 @@ public class MoneyArea : MonoBehaviour
         {
             _fallObjects.FallenObjectValue--;
             _fallObjects.FallenObjects.LastOrDefault().transform.position = moneyObjects.position;
-            yield return new WaitForSeconds(0.85f);
+            yield return new WaitForSeconds(0.50f);
         }
     }
 }

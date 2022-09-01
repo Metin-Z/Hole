@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8631399111370874155}
   - component: {fileID: 8631399111368672236}
   - component: {fileID: 8203268671542846611}
-  - component: {fileID: -4801841852440334010}
+  - component: {fileID: -6785276912940521634}
   m_Layer: 0
   m_Name: Emerald
   m_TagString: Emerald
@@ -114,9 +114,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
---- !u!114 &-4801841852440334010
+--- !u!114 &-6785276912940521634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8631399111368672235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991666906554e5a42ae4c9d6119d1d96, type: 3}
+  m_Script: {fileID: 11500000, guid: d3bd9c6de6eeadd4baa18b6d852cb1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

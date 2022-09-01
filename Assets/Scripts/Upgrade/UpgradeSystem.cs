@@ -84,11 +84,11 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(CommonTypes.LEVEL_DATA_KEY) == 0)
         {
-            scaleMultiply = 1.2f;
+            scaleMultiply = 1.15f;
         }
         if (PlayerPrefs.GetInt(CommonTypes.LEVEL_DATA_KEY) == 1)
         {
-            scaleMultiply = 1.15f;
+            scaleMultiply = 1.06f;
         }
         #region Id-Money;
         if (PlayerPrefs.GetInt("ScaleUpControl") == 1) { scaleUpMoney = 500; }if (PlayerPrefs.GetInt("ScaleUpControl") == 2) { scaleUpMoney = 750; }if (PlayerPrefs.GetInt("ScaleUpControl") == 3) { scaleUpMoney = 1000; }if (PlayerPrefs.GetInt("ScaleUpControl") == 4) { scaleUpMoney = 1250; }

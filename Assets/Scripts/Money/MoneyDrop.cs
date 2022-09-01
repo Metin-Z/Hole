@@ -13,15 +13,14 @@ public class MoneyDrop : MonoBehaviour
     SliderUI _slider;
     private void Start()
     {
-        _slider = FindObjectOfType<SliderUI>();   
+        _slider = FindObjectOfType<SliderUI>();
+        _moneyPos = FindObjectOfType<MoneyPosList>();
+        _fallObjects = FindObjectOfType<FallObjects>();
     }
     private void OnTriggerEnter(Collider other)
-    {
-        _slider.slideValue++;
-        Destroy(other.gameObject);
-        _moneyPos = FindObjectOfType<MoneyPosList>();    
-        _fallObjects = FindObjectOfType<FallObjects>();
+    {            
         _fallObjects.FallenObjects.Remove(_fallObjects.FallenObjects.LastOrDefault());
+        _slider.slideValue++;
         if (other.gameObject.CompareTag("Stone"))
         {
             GameObject obj =Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
@@ -89,5 +88,6 @@ public class MoneyDrop : MonoBehaviour
                 }
             }
         }
+        Destroy(other.gameObject);
     }
 }

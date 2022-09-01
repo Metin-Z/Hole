@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
     private void Start()
     {
         StartScale = transform.localScale;
-        if (StartScale == new Vector3 (0,1,0))
+        if (StartScale == new Vector3 (0,0,0))
         {
             transform.localScale = new Vector3(1, 1, 1);
         }

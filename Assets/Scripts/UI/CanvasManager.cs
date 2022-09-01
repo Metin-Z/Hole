@@ -19,7 +19,7 @@ public class CanvasManager : MonoBehaviour
         _upgradeSystem = FindObjectOfType<UpgradeSystem>();
         moneyCount = PlayerPrefs.GetInt("Money");
         moneyText.text = moneyCount.ToString();
-       _player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("ScaleX"), 1, PlayerPrefs.GetFloat("ScaleZ"));
+       _player.transform.localScale = new Vector3(PlayerPrefs.GetFloat("ScaleX"), PlayerPrefs.GetFloat("ScaleY"), PlayerPrefs.GetFloat("ScaleZ"));
         PlayerPrefs.GetInt(CommonTypes.LEVEL_FAKE_DATA_KEY);
     }
     public void SetTotalMoneyCount(int moneyValue)

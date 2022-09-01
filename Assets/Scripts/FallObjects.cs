@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
 public class FallObjects : MonoBehaviour
 {
     CanvasManager _canvasmanager;
-    Controller _player;
-    public int FallingObjects;
+    Controller _player;   
     public List<GameObject> FallenObjects;
     public int FallenObjectValue;
     private void Awake()
@@ -29,11 +27,11 @@ public class FallObjects : MonoBehaviour
             _canvasmanager.SetTotalMoneyCount(50);
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("Stone") || other.gameObject.CompareTag("Gold") || other.gameObject.CompareTag("BonusGem") || other.gameObject.CompareTag("Emerald") || other.gameObject.CompareTag("Diamond"))
+
+        if (other.gameObject.GetComponent<Loot>())
         {
             FallenObjects.Add(other.gameObject);
         }
-
     }
     public void Update()
     {
@@ -41,8 +39,7 @@ public class FallObjects : MonoBehaviour
         if (FallenObjectValue >= 20)
         {
             _player.transform.GetChild(1).GetComponent<BoxCollider>().isTrigger = false;
-            _player.transform.GetChild(2).gameObject.SetActive(true);
-            
+            _player.transform.GetChild(2).gameObject.SetActive(true);         
         }
     }
 }
