@@ -525,6 +525,7 @@ MonoBehaviour:
   Levels:
   - {fileID: 11400000, guid: 88ffb0d0e22f6fc44895c5742969eca9, type: 2}
   - {fileID: 11400000, guid: 07698811f682c944f80487f93ae4ece2, type: 2}
+  - {fileID: 11400000, guid: d61ddaff91cdd7548a12a5ca77159c9f, type: 2}
   nextLevelUI: {fileID: 2064423094}
   Skybox: []
   levelObjectList: []
@@ -932,8 +933,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 14.331514, z: 1}
-  m_Center: {x: 0, y: -8.767468, z: -0.000000013935513}
+  m_Size: {x: 1, y: 18.550844, z: 1}
+  m_Center: {x: 0, y: -10.877129, z: -0.000000017288727}
 --- !u!23 &203186631
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1140,8 +1141,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 9.261009, z: 1.0334191}
-  m_Center: {x: 0, y: -4.1322155, z: -0.016709413}
+  m_Size: {x: 1, y: 12.543158, z: 1.0334191}
+  m_Center: {x: 0, y: -5.773292, z: -0.016709417}
 --- !u!23 &283274058
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1617,7 +1618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390490907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 350, z: 0}
+  m_LocalPosition: {x: 0, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1656,7 +1657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a77342ff80c2924582681ee896f6306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingObjects: 0
   FallenObjects: []
   FallenObjectValue: 0
 --- !u!65 &397072099
