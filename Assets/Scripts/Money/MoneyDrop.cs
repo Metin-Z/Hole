@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using DG.Tweening;
 public class MoneyDrop : MonoBehaviour
 {
     public GameObject MoneyPrefab;
@@ -25,7 +26,10 @@ public class MoneyDrop : MonoBehaviour
         {
             GameObject obj =Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
             obj.transform.parent = null;
-            obj.transform.localScale = new Vector3(1, 1, 1);
+            obj.transform.localScale = new Vector3(0.5f, 0.5f,0.5f);
+            Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+            obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
+            obj.transform.DORotate(new Vector3(0, 360, 0), 1, RotateMode.FastBeyond360);
             PosValue++;
             if (PosValue % 15 == 0)
             {
@@ -38,7 +42,10 @@ public class MoneyDrop : MonoBehaviour
             {
                 GameObject obj = Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
                 obj.transform.parent = null;
-                obj.transform.localScale = new Vector3(1, 1, 1);
+                obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+                obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
+                obj.transform.DORotate(new Vector3(0, 360, 0), 1, RotateMode.FastBeyond360);
                 PosValue++;
                 if (PosValue % 15 == 0)
                 {
@@ -52,7 +59,10 @@ public class MoneyDrop : MonoBehaviour
             {
                 GameObject obj = Instantiate(MoneyBagPrefab, _moneyPos.MoneyPoses[PosValue]);
                 obj.transform.parent = null;
-                obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                obj.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+                obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
+                obj.transform.DORotate(new Vector3(0, 450, 0), 1, RotateMode.FastBeyond360);
                 PosValue++;
                 if (PosValue % 15 == 0)
                 {
@@ -66,7 +76,10 @@ public class MoneyDrop : MonoBehaviour
             {
                 GameObject obj = Instantiate(MoneyPrefab, _moneyPos.MoneyPoses[PosValue]);
                 obj.transform.parent = null;
-                obj.transform.localScale = new Vector3(1, 1, 1);
+                obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+                obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
+                obj.transform.DORotate(new Vector3(0, 360, 0), 1, RotateMode.FastBeyond360);
                 PosValue++;
                 if (PosValue % 15 == 0)
                 {
@@ -80,7 +93,10 @@ public class MoneyDrop : MonoBehaviour
             {
                 GameObject obj = Instantiate(MoneyBagPrefab, _moneyPos.MoneyPoses[PosValue]);
                 obj.transform.parent = null;
-                obj.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+                obj.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                Vector3 scale = new Vector3(obj.transform.localScale.x * 2f, obj.transform.localScale.y * 2f, obj.transform.localScale.z * 2f);
+                obj.transform.DOScale(scale, 0.75f).SetEase(Ease.InBounce);
+                obj.transform.DORotate(new Vector3(0, 450, 0), 1, RotateMode.FastBeyond360);
                 PosValue++;
                 if (PosValue % 15 == 0)
                 {
